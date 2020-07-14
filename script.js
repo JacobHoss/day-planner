@@ -2,20 +2,18 @@ var now = moment().format("dddd, MMMM Do");
 $('#currentDay').append(now);
 
 $(document).ready(function() {
-var hour = new Date().getHours();
+    
+    var hour = new Date().getHours();
 
-$("h1").click(function(){
-$("#time1").text(localStorage.getItem(time1));
-// $("#time2").text(localStorage.getItem("time2"));
-// $("#time3").text(localStorage.getItem("time3"));
-// $("#time4").text(localStorage.getItem("time4"));
-// $("#time5").text(localStorage.getItem("time5"));
-// $("#time6").text(localStorage.getItem("time6"));
-// $("#time7").text(localStorage.getItem("time7"));
-// $("#time8").text(localStorage.getItem("time8"));
-// $("#time9").text(localStorage.getItem("time9"));
-alert("hi everybody")
-});
+    $("#time1").val(localStorage.getItem("time1"));
+    $("#time2").val(localStorage.getItem("time2"));
+    $("#time3").val(localStorage.getItem("time3"));
+    $("#time4").val(localStorage.getItem("time4"));
+    $("#time5").val(localStorage.getItem("time5"));
+    $("#time6").val(localStorage.getItem("time6"));
+    $("#time7").val(localStorage.getItem("time7"));
+    $("#time8").val(localStorage.getItem("time8"));
+    $("#time9").val(localStorage.getItem("time9"));
 
 $("i").click(function(){
     localStorage.setItem("time1", $("#time1").val());
