@@ -1,9 +1,8 @@
 $(document).ready(function () {
+    // this function changes the classes of all the timeblocks, based on the hour variable
     ifFunction = function () {
         var d = new Date();
         var hour = d.getHours();
-        console.log(hour);
-        console.log(d);
         if (hour < 9) {
             $("#time1 , #time2 , #time3 , #time4 , #time5 , #time6 , #time7 , #time8 , #time9").addClass("future");
         }
@@ -59,11 +58,12 @@ $(document).ready(function () {
         var currentDay = $("#currentDay")
         var date = moment(new Date())
         currentDay.html(date.format("dddd, MMMM Do"));
+        // at midnight, the date automatically changes and all the classes change to future (without needing to refresh the page)
         ifFunction();
     }
     update();
     setInterval(update, 1000);
-
+    // this code block populates the timeblocks with the text that is saved in local storage
     $("#time1").val(localStorage.getItem("time1"));
     $("#time2").val(localStorage.getItem("time2"));
     $("#time3").val(localStorage.getItem("time3"));
@@ -74,6 +74,7 @@ $(document).ready(function () {
     $("#time8").val(localStorage.getItem("time8"));
     $("#time9").val(localStorage.getItem("time9"));
 
+    // this function saves the text in all the timeblocks whenever the Save Icon is clicked
     $("i").click(function () {
         localStorage.setItem("time1", $("#time1").val());
         localStorage.setItem("time2", $("#time2").val());
